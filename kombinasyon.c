@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+//kombinasyon = n! / r! * (n-r)!
+int faktoryel(int);
+int comb(int,int);
+int main(){
+	
+	int sayi1,sayi2;
+	printf("Kombinasyonunu istediðiniz n sayisini giriniz.(n,r)\n");
+	scanf("%d",&sayi1);
+	printf("Kombinasyonunu istediðiniz r sayisini giriniz.(n,r)\n");
+	scanf("%d",&sayi2);
+	printf("%d",comb(5,2));
+	
+	return 0;
+
+}
+
+int faktoryel(int x){
+	
+	int sum=1,a;
+	for(a=1;a<=x;a++){
+		sum*=a;
+	}
+	
+	return sum;
+}
+int comb(int k, int y){
+	
+	int sonuc,t,a1,a2,a3;
+	t = k-y;
+	a1 = faktoryel(k);
+	a2 = faktoryel(y);
+	a3 = faktoryel(t);
+	sonuc = a1/ (a2 * a3);
+	
+	return sonuc;
+	
+}
